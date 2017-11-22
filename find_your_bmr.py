@@ -5,19 +5,19 @@ def get_bmr_male(weight, height, age):
 def get_bmr_female(weight, height, age):
     bmr_cals_female = (10 * float(weight)) + (6.25 * float(height)) - (5 * float(age)) - 161
     print("You are expending " + str(bmr_cals_female) + " calories just by existing!")
+    
 
+bmr_questions = True
 
-
-
-while True:
+while bmr_questions:
     print("For your basal metabolic rate, please enter your sex (male/female): ")
     print("(press 'q' to exit) ")
-    sex = input("Sex: ")
+    sex = input("Sex: ").lower()
     if sex == "male":
         print("Now please enter your weight, height, and age: ")
         print("For weight, please choose your preferred unit: ")
         print("(press 'q' to exit) ")
-        lbs_or_kgs = input("Enter 'kg' or 'lbs' ")
+        lbs_or_kgs = input("Enter 'kg' or 'lbs' ").lower()
         if lbs_or_kgs == 'kg':
             total_weight_male = float(input("Weight: "))
         if lbs_or_kgs == 'lbs':
@@ -29,7 +29,7 @@ while True:
         
         print("For height, please choose your preferred unit: ")
         print("(press 'q' to exit)")
-        in_or_cm = input("Enter 'in' or 'cm' ")
+        in_or_cm = input("Enter 'in' or 'cm' ").lower()
         if in_or_cm == 'cm':
             total_height_male = float(input("Height: "))
         if in_or_cm == 'in':
@@ -55,7 +55,7 @@ while True:
         print("Now please enter your weight, height, and age: ")
         print("For weight, please choose your preferred unit: ")
         print("(press 'q' to exit)")
-        lbs_or_kgs = input("Enter 'kg' or 'lbs' ")
+        lbs_or_kgs = input("Enter 'kg' or 'lbs' ").lower()
         if lbs_or_kgs == 'kg':
             total_weight_female = float(input("Weight: "))
         if lbs_or_kgs == 'lbs':
@@ -66,7 +66,7 @@ while True:
 
         print("For height, please choose your preferred unit: ")
         print("(press 'q' to exit) ")
-        in_or_cm = input("Enter 'in' or 'cm' ")
+        in_or_cm = input("Enter 'in' or 'cm' ").lower()
         if in_or_cm == 'in':
             height_female = float(input("Height: "))
             total_height_female = height_female * 2.54
@@ -82,12 +82,14 @@ while True:
             break
 
         get_bmr_female(float(total_weight_female), float(total_height_female), age_female)
+
         
 
-    if sex == 'q':
+    elif sex == 'q':
         break
 
-    else:
-        break
+    again = input("Would you like to check another? ").lower()
+    if again == 'no':
+        bmr_questions = False
 
 
