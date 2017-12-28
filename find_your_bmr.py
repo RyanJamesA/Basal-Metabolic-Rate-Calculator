@@ -30,7 +30,7 @@ def get_sex():
     get_sex_input = input("male/female: ")
     while True:
         if get_sex_input == 'male' or get_sex_input == 'female':
-            return get_sex
+            return get_sex_input
         if get_sex_input == 'q':
             sys.exit()
         else:
