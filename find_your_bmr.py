@@ -92,6 +92,7 @@ def my_calculations(units, sex, age, height, weight):
     start_again()
 
 def start_again():
+    """Function that asks the user if they wish to calculate another"""
     while True:
         print("\nWould you like to do another one?")
         user_response = input("y/n ")
